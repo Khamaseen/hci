@@ -24,21 +24,37 @@ const app = express();
 const DATABASE = [];
 
 app.post("/api/comments/add", (request, response) => {
+
   const text = request.query.text;
+  
   if (text) {
+  
     const comment = {
+    
       id: Math.ceil(Math.random() * 1e10),
+      
       text: text,
+      
       date: Date.now() / 1000,
+      
     };
+    
     DATABASE.push(comment);
+    
     response.json(comment);
+    
   } else {
+  
     response.status(500).send("Text missing");
+    
   }
+  
 });
+
 app.get("/api/comments", (request, response) => {
+
   response.json(DATABASE);
+  
 });
 
 app.listen(1337);
