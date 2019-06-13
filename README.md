@@ -17,7 +17,8 @@ Major components are notifications, timeline, chat(s), facebook-like page.
 
 
 ###Snippet Node JS: 
-{
+
+
 const express = require("express");
 const app = express();
 
@@ -58,4 +59,5 @@ app.get("/api/comments", (request, response) => {
 });
 
 app.listen(1337);
-}
+
+
