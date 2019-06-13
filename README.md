@@ -4,11 +4,41 @@ This app uses html, css, js.
 
 Major components are notifications, timeline, chat(s), facebook-like page.
 
-LINK TO HTML CSS JS TUTORIAL -> https://www.youtube.com/watch?v=7cwRaTqR4k0&list=PLoYCgNOIyGAB_8_iq1cL8MVeun7cB6eNc&index=8 
-LINK TO PWA -> https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/
+###LINK TO HTML CSS JS TUTORIAL 
+-> https://www.youtube.com/watch?v=7cwRaTqR4k0&list=PLoYCgNOIyGAB_8_iq1cL8MVeun7cB6eNc&index=8 
 
-LINKSSS TO PWA NOTIFICATIONS -> https://medium.com/@tarique_ejaz/progressive-web-app-push-notifications-making-the-web-app-more-native-in-nature-a167af22e004
+###LINK TO PWA 
+-> https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/
 
-https://developers.google.com/web/fundamentals/codelabs/push-notifications/
+###LINKS TO NODE
+-> https://expressjs.com/
+-> https://www.npmjs.com/package/flat-cache
+-> https://www.npmjs.com/package/nodemon
 
-https://www.blog.plint-sites.nl/how-to-add-push-notifications-to-a-progressive-web-app/
+
+###Snippet Node JS: 
+
+const express = require("express");
+const app = express();
+
+const DATABASE = [];
+
+app.post("/api/comments/add", (request, response) => {
+  const text = request.query.text;
+  if (text) {
+    const comment = {
+      id: Math.ceil(Math.random() * 1e10),
+      text: text,
+      date: Date.now() / 1000,
+    };
+    DATABASE.push(comment);
+    response.json(comment);
+  } else {
+    response.status(500).send("Text missing");
+  }
+});
+app.get("/api/comments", (request, response) => {
+  response.json(DATABASE);
+});
+
+app.listen(1337);
