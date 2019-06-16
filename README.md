@@ -1,5 +1,5 @@
 # hci
-progressive web application to help new/young mothers stay off the sigaret.
+progressive web application to help new/young mothers stay off the cigaret.
 This app uses html, css, js.
 
 Major components are notifications, timeline, chat(s), facebook-like page.
