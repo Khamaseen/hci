@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sign Up</title>
+    <title>Sign In</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/bootstrap.min.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
-<body style="background: url('../background.jpg') no-repeat center center fixed;">
+<body style="background: url('../resources/background.png') no-repeat center center fixed;">
 
     <div class="container mt-5">
         <div class="row justify-content-center align-self-center">
@@ -24,13 +25,13 @@
                 <form class="animated zoomInRight">
 
                     <div class="form-group">
-                      <label for="InputEmail1">Email address</label>
+                      <label for="InputEmail1"><i class="fas fa-envelope"></i> Email address</label>
                       <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
 
                     <div class="form-group">
-                      <label for="InputPassword1">Password</label>
+                      <label for="InputPassword1"><i class="fas fa-key"></i> Password</label>
                       <input type="password" class="form-control" id="Password1" placeholder="Password">
                     </div>
 
@@ -39,7 +40,7 @@
                         <label class="form-check-label" for="exampleCheck1">Remember me</label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Log in</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Log in</button>
                     <p class="mt-5 mb-0">Do not have an account with us?  <a class="navbar-brand" href="signup.html">Sign up!</a></p>
 
                 </form>
