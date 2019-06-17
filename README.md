@@ -15,6 +15,8 @@ Major components are notifications, timeline, chat(s), facebook-like page.
 -> https://www.npmjs.com/package/flat-cache
 -> https://www.npmjs.com/package/nodemon
 
+####CHAT
+-> https://socket.io/get-started/chat
 
 ###Snippet Node JS: 
 
