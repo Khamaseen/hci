@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/bootstrap.min.css" /> <!-- BootStrapp CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/timeline.css" /> <!-- BootStrapp CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+  <!-- START OF NAVBAR. -->
+    <nav class="navbar  navbar-expand-md navbar-dark bg-transparent p-3">
+    
+      <!-- Button for mobile views on the navbar. -->
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <!-- Navbar items. -->
+      <a class="navbar-brand" href="main.html">
+        <img src="../resources/brand-logo.png" width="35" height="35" class="d-inline-block align-top" alt="">
+        Pacifier
+      </a>
+      <div class="collapse navbar-collapse" id="collapse_target">
+        <ul class="navbar-nav nav-pills ml-auto p-2">
+    
+          <li class="nav-item">
+            
+           <a class="nav-link" href="main.html"><i class="fas fa-home"></i> Home</a> 
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="far fa-comment-dots"></i> Chat</a>
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link active" href="timeline.html"><i class="far fa-hourglass"></i> Timeline</a>
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="far fa-clipboard"></i> Posts</a>
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link" href="about-us.html"><i class="far fa-building"></i> About us</a>
+          </li>
+    
+    
+          <!-- Drop down menu only if the user is loged in. -->
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><i class="far fa-user-circle"></i> "username"</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown_target">
+              <form class="px-4 py-3" action="/logout/endpoint" method="POST">
+                <button class="btn btn-primary" type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+              </form>
+            </div>
+          </li>
+          <!-- Show Login and Signup if user not loged in. -->
+    
+        </ul>
+      </div>
+    </nav>
+    <!-- END OF NAVBAR. -->
+
+    <div class="container">
+        <div class="timeline">
+            <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+                <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                    <h3 class=" text-light">Timeline Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui
+                        cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
+                        dignissimos porro.</p>
+                </div>
+                <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+                    <img src="img/img13.png" class="img-fluid" alt="img">
+                </div>
+                <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+                    <time>2018-02-23</time>
+                </div>
+            </div>
+            <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+                <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                    <h3 class=" text-light">Timeline Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui
+                        cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
+                        dignissimos porro.</p>
+                </div>
+                <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+                    <img src="img/img13.png" class="img-fluid" alt="img">
+                </div>
+                <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+                    <time>2018-02-23</time>
+                </div>
+            </div>
+            <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+                <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                    <h3 class=" text-light">Timeline Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui
+                        cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
+                        dignissimos porro.</p>
+                </div>
+                <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+                    <img src="img/img13.png" class="img-fluid" alt="img">
+                </div>
+                <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+                    <time>2018-02-23</time>
+                </div>
+            </div>
+            <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+                <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                    <h3 class=" text-light">Timeline Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui
+                        cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
+                        dignissimos porro.</p>
+                </div>
+                <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+                    <img src="img/img13.png" class="img-fluid" alt="img">
+                </div>
+                <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+                    <time>2018-02-23</time>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+    <!-- START OF FOOTER. -->
+    <div class="jumbotron bg-dark text-white" style="margin-bottom: 0px">
+        <footer class="page-footer elegant-color-dark  center-on-small-only">
+            <h3 class="display-4">Pacifier</h3>
+            <hr class="my-4 bg-light">
+            <p class="lead">
+                Our contact details are down below:
+            </p>
+            <ul class="list-unstyled">
+                <li>
+                    <i class="fas fa-envelope"></i> Email: example@vu.nl
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i> Address: VU Amsterdam
+                </li>
+                <li>
+                    <i class="fas fa-hashtag"></i> Phone number: +123456789
+                </li>
+            </ul>
+        </footer>
+    </div>
+<!-- END OF FOOTER. -->
+
+</body>
+</html>
+<!-- BOOTSRAP 4 JQ & JS-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
