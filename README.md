@@ -4,6 +4,15 @@ This app uses html, css, js.
 
 Major components are notifications, timeline, chat(s), facebook-like page.
 
+### DATABASE
+The database is written in MongoDB, where nodejs is used to write to this database. MongoDB's installation is on the local machine, e.g. on linux it would be found somewhere in /etc/..., this makes it at this point difficult to be run after cloning the repository. Another thing is that the database itself, the place where mongod writes the data to, is also located on the local machine, meaning at this point the data is not persistent to be transferred at git. Further research will go into this to change this. Meanwhile the backend side connecting with the db is run locally by Khamaseen (Dennis). --- To experience a similar set up, stubs will be made, these can be turned on and off by commenting in and out the different scripts. (??)
+
+For the MongoDB the package 'mongoose' (gotta love the naming) is used.
+
+Running the db locally. After installation of MongoDB and creating the db folder MongoDB is run by the command: 'mongod' which sets up the deamon. Now, when the db is open and running, the node package 'mongoose' can be used to connect with this db and use CRUD operations. The command: node 'javascriptfileofmongoose.js'. 
+
+With the program 'mongodb-compass' it is possible to get a visual representation of the db. Run it from the terminal with: 'mongodb-compass'.
+
 ###LINK TO HTML CSS JS TUTORIAL 
 -> https://www.youtube.com/watch?v=7cwRaTqR4k0&list=PLoYCgNOIyGAB_8_iq1cL8MVeun7cB6eNc&index=8 
 
