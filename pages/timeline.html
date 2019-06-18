@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About Us</title>
+    <title>Timeline</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/bootstrap.min.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
-  <!-- START OF NAVBAR. -->
+    <!-- START OF NAVBAR. -->
     <nav class="navbar  navbar-expand-md navbar-dark bg-transparent p-3">
     
       <!-- Button for mobile views on the navbar. -->
@@ -66,6 +66,43 @@
     </nav>
     <!-- END OF NAVBAR. -->
 
+    <!-- START OF ADD STORY -->
+    <div class="modal fade" id="addStoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Share a story</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Story Title <i class="fas fa-feather-alt"></i></label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Enter the story <i class="fas fa-comment-alt"></i></label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-primary"><i class="fas fa-share"></i> Share</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center">
+        <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#addStoryModal">
+                <i class="fas fa-plus fa-5x"></i></a>
+    </div>
+    <!-- END OF ADD STORY -->
+
+    <!-- START OF TIMELINE -->
     <div class="container">
         <div class="timeline">
             <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
@@ -126,7 +163,8 @@
             </div>
         </div>
     </div>
-            
+    <!-- END OF TIMELINE -->
+
     <!-- START OF FOOTER. -->
     <div class="jumbotron bg-dark text-white" style="margin-bottom: 0px">
         <footer class="page-footer elegant-color-dark  center-on-small-only">
@@ -148,7 +186,7 @@
             </ul>
         </footer>
     </div>
-<!-- END OF FOOTER. -->
+    <!-- END OF FOOTER. -->
 
 </body>
 </html>
