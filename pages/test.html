@@ -3,13 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Timeline</title>
+    <title>Timeline Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/bootstrap.min.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="../css/timeline.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- START OF NAVBAR. -->
@@ -78,7 +82,7 @@
                     </button>
                 </div>
                 <div class="modal-body mx-3">
-                    <form>
+                    <form id="timelineForm">
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Story Title <i class="fas fa-feather-alt"></i></label>
                             <input type="email" class="form-control" id="exampleFormControlInput1">
@@ -90,14 +94,14 @@
                     </form>
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-primary"><i class="fas fa-share"></i> Share</button>
+                    <button class="btn btn-primary" id="testSubmit"><i class="fas fa-share"></i> Share</button>
                 </div>
             </div>
         </div>
     </div>
     
     <div class="text-center">
-        <a href="" class="btn btn-primary btn-rounded btn-lg mb-4" data-toggle="modal" data-target="#addStoryModal">
+        <a href=""  class="btn btn-primary btn-rounded btn-lg mb-4" data-toggle="modal" data-target="#addStoryModal">
                 <i class="fas fa-plus "> Add story</i></a>
     </div>
     <!-- END OF ADD STORY -->
@@ -196,6 +200,30 @@
 </body>
 </html>
 <!-- BOOTSRAP 4 JQ & JS-->
+<script>
+$("#testSubmit").click(function(){
+
+    var headerTest = $("#timelineForm #exampleFormControlInput1").val();
+    var paragraphTest = $("#timelineForm #exampleFormControlTextarea1").val();
+    
+    var testString = `<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+                <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                    <h3 class=" text-light">${headerTest}</h3>
+                    <p>${paragraphTest}.</p>
+                </div>
+                <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+                    <img src="img/img13.png" class="img-fluid" alt="img">
+                </div>
+                <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+                    <time>2018-02-23</time>
+                </div>
+            </div>`
+
+    $("div.timeline").prepend(testString);
+    $("#addStoryModal").modal("hide");
+})
+
+</script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="../js/bootstrap/bootstrap.min.js"></script>
