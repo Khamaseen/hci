@@ -12,3 +12,7 @@ body {
   footer {
     font-family: 'Raleway', sans-serif;
   }
+
+  textarea {
+    resize: none;
+  }
