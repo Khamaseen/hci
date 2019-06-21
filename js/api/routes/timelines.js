@@ -26,7 +26,8 @@ router.post('/', (req, res, next) => {
     const timeline = new Timeline({
         _id: new mongoose.Types.ObjectId(),
         title: req.body.title,
-        paragraph: req.body.paragraph
+        paragraph: req.body.paragraph,
+        date: req.body.date
     });
 
     timeline
@@ -34,7 +35,6 @@ router.post('/', (req, res, next) => {
         .then(result => {
             console.log(result);
             res.status(201).json({
-                message: 'Timeline added to database.',
                 createdTimeline: timeline,
             });
         })
