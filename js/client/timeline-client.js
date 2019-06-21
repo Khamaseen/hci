@@ -1,8 +1,32 @@
 
 
-$("#timelineSubmit").click(async function () {
-
+$(document).ready(function (){
     
+    const url = 'http://localhost:3000/timeline';
+    
+    $.get(url, function(result){
+        result.docs.forEach(document => {
+            var timelineTemplate = 
+                `<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+                    <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                        <h3 class=" text-light">${document.title}</h3>
+                        <p>${document.paragraph}.</p>
+                    </div>
+                    <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+                        <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
+                    </div>
+                    <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+                        <time>${document.date}</time>
+                    </div>
+                </div>`
+            
+            $("div.timeline").prepend(timelineTemplate);
+        });
+    });
+});
+
+
+$("#timelineSubmit").click(async function () {  
     const url = 'http://localhost:3000/timeline';
 
     try {
@@ -32,7 +56,7 @@ $("#timelineSubmit").click(async function () {
                 <p>${paragraphTest}.</p>
             </div>
             <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
-                <img src="img/img13.png" class="img-fluid" alt="img">
+                <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
             </div>
             <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
                 <time>${date}</time>
@@ -40,8 +64,7 @@ $("#timelineSubmit").click(async function () {
         </div>`
 
             $("div.timeline").prepend(timelineTemplate);
-            $("#addStoryModal").modal("hide");
-        
+            $("#addStoryModal").modal("hide");      
         }
     } catch (error) {
         console.log(error);
