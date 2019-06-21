@@ -8,14 +8,17 @@ router.get('/', (req, res, next) => {
     Timeline.find()
         .exec()
         .then(docs => {
-          console.log(docs);
-          res.status(200).json(docs);
+            let count = docs.length;
+            res.status(200).json({
+                count: count,
+                docs
+            });
         })
         .catch(err => {
-          console.log(err);
-          res.status(500).json({
-            error: err
-          });
+            console.log(err);
+            res.status(500).json({
+                error: err
+            });
         });
 });
 
@@ -32,16 +35,16 @@ router.post('/', (req, res, next) => {
             console.log(result);
             res.status(201).json({
                 message: 'Timeline added to database.',
-                createdTimeline: timeline
+                createdTimeline: timeline,
             });
         })
         .catch(err => {
             console.log(err);
             res.status(500).json({
-              error: err
+                error: err
             });
         });
-  
+
 });
 
 router.delete('/', (req, res, next) => {
