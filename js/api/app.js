@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const app = express();
 
 const timelineRoutes = require('./routes/timelines');
+const postRoutes = require('./routes/posts');
+
 // Connecting to MongoDB Atlas (cloud db)
 mongoose.connect(
   "mongodb+srv://hci-project:hci-project@hci-psmmo.mongodb.net/test?retryWrites=true&w=majority",
@@ -13,7 +15,7 @@ mongoose.connect(
   }
 );
 
-// Parse the request json body
+// Middlewhare to Parse the request json body
 app.use(bodyParser.json());
 
 // CORS header inclusion
@@ -32,6 +34,7 @@ app.use((req, res, next) => {
 
 // Redirect requests made to '/timeline' to timeline.js routes.
 app.use('/timeline', timelineRoutes);
+app.use('/post', postRoutes);
 
 // Error message handling.
 app.use((req, res, next) => {

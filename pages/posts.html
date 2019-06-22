@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Posts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/bootstrap.min.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
@@ -75,10 +80,10 @@
                 <form id="timelineForm" >
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1" class="text-white display-4">Share a post <i class="fas fa-comment-alt"></i></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What's on your mind..."></textarea>
+                        <textarea class="form-control" id="textInput" rows="3" placeholder="What's on your mind..."></textarea>
                     </div>
                 </form>
-                <button class="btn btn-primary"><i class="fas fa-share"></i> Share</button>
+                <button class="btn btn-primary" id="postSubmit"><i class="fas fa-share"></i> Share</button>
                 <hr class="my-4 bg-light">
             </div>
         </div>
@@ -102,7 +107,7 @@
                         <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
-                    <img src="img/img13.png" class="img-fluid" alt="img">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
                 </div>
                 <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
                     <time>2018-02-23</time>
@@ -121,7 +126,7 @@
                         <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
-                    <img src="img/img13.png" class="img-fluid" alt="img">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
                 </div>
                 <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
                     <time>2018-02-23</time>
@@ -140,7 +145,7 @@
                         <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
-                    <img src="img/img13.png" class="img-fluid" alt="img">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
                 </div>
                 <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
                     <time>2018-02-23</time>
@@ -159,7 +164,7 @@
                         <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
-                    <img src="img/img13.png" class="img-fluid" alt="img">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
                 </div>
                 <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
                     <time>2018-02-23</time>
@@ -196,6 +201,6 @@
 </body>
 </html>
 <!-- BOOTSRAP 4 JQ & JS-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/client/posts-client.js"></script>
