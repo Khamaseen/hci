@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +27,7 @@
     
       <!-- Navbar items. -->
       <a class="navbar-brand" href="main.html">
-        <img src="../resources/brand-logo.png" width="35" height="35" class="d-inline-block align-top" alt="">
+        <img src="../resources/brand-logo.png" width="35" height="35" class="d-inline-block align-top" alt="Brand Logo">
         Pacifier
       </a>
       <div class="collapse navbar-collapse" id="collapse_target">
@@ -35,32 +35,32 @@
     
           <li class="nav-item">
             
-           <a class="nav-link" href="main.html"><i class="fas fa-home"></i> Home</a> 
+           <a class="nav-link" href="main.html"><span class="fas fa-home"></span> Home</a> 
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="chat.html"><i class="far fa-comment-dots"></i> Chat</a>
+            <a class="nav-link" href="chat.html"><span class="far fa-comment-dots"></span> Chat</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="timeline.html"><i class="far fa-hourglass"></i> Timeline</a>
+            <a class="nav-link" href="timeline.html"><span class="far fa-hourglass"></span> Timeline</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link active" href="posts.html"><i class="far fa-clipboard"></i> Posts</a>
+            <a class="nav-link active" href="posts.html"><span class="far fa-clipboard"></span> Posts</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="about-us.html"><i class="far fa-building"></i> About us</a>
+            <a class="nav-link" href="about-us.html"><span class="far fa-building"></span> About us</a>
           </li>
     
     
           <!-- Drop down menu only if the user is loged in. -->
           <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><i class="far fa-user-circle"></i> "username"</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
             <div class="dropdown-menu" aria-labelledby="dropdown_target">
               <form class="px-4 py-3" action="/logout/endpoint" method="POST">
-                <button class="btn btn-primary" type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                <button class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
               </form>
             </div>
           </li>
@@ -79,11 +79,11 @@
                 <hr class="my-4 bg-light">
                 <form id="timelineForm" >
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1" class="text-white display-4">Share a post <i class="fas fa-comment-alt"></i></label>
+                        <label for="exampleFormControlTextarea1" class="text-white display-4">Share a post <span class="fas fa-comment-alt"></span></label>
                         <textarea class="form-control" id="textInput" rows="3" placeholder="What's on your mind..."></textarea>
                     </div>
                 </form>
-                <button class="btn btn-primary" id="postSubmit"><i class="fas fa-share"></i> Share</button>
+                <button class="btn btn-primary" id="postSubmit"><span class="fas fa-share"></span> Share</button>
                 <hr class="my-4 bg-light">
             </div>
         </div>
@@ -102,9 +102,9 @@
                         cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
                         dignissimos porro.</p>
                         <br>
-                        <p class="text-white justify-content-left"> <b>"somebody: "</b> Great! Keep it going!</p>
+                        <p class="text-white justify-content-left"> <strong>"somebody: "</strong> Great! Keep it going!</p>
 
-                        <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
+                        <button class="btn btn-primary">comment <span class="far fa-comments"></span></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
                     <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
@@ -121,9 +121,9 @@
                         cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
                         dignissimos porro.</p>
                         <br>
-                        <p class="text-white justify-content-left"> <b>"somebody: "</b> Great! Keep it going!</p>
+                        <p class="text-white justify-content-left"> <strong>"somebody: "</strong> Great! Keep it going!</p>
 
-                        <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
+                        <button class="btn btn-primary">comment <span class="far fa-comments"></span></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
                     <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
@@ -140,9 +140,9 @@
                         cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
                         dignissimos porro.</p>
                         <br>
-                        <p class="text-white justify-content-left"> <b>"somebody: "</b> Great! Keep it going!</p>
+                        <p class="text-white justify-content-left"> <strong>"somebody: "</strong> Great! Keep it going!</p>
 
-                        <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
+                        <button class="btn btn-primary">comment <span class="far fa-comments"></span></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
                     <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
@@ -159,9 +159,9 @@
                         cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
                         dignissimos porro.</p>
                         <br>
-                        <p class="text-white justify-content-left"> <b>"somebody: "</b> Great! Keep it going!</p>
+                        <p class="text-white justify-content-left"> <strong>"somebody: "</strong> Great! Keep it going!</p>
 
-                        <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
+                        <button class="btn btn-primary">comment <span class="far fa-comments"></span></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
                     <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
@@ -185,13 +185,13 @@
             </p>
             <ul class="list-unstyled">
                 <li>
-                    <i class="fas fa-envelope"></i> Email: example@vu.nl
+                    <span class="fas fa-envelope"></span> Email: example@vu.nl
                 </li>
                 <li>
-                    <i class="fas fa-map-marker-alt"></i> Address: VU Amsterdam
+                    <span class="fas fa-map-marker-alt"></span> Address: VU Amsterdam
                 </li>
                 <li>
-                    <i class="fas fa-hashtag"></i> Phone number: +123456789
+                    <span class="fas fa-hashtag"></span> Phone number: +123456789
                 </li>
             </ul>
         </footer>
