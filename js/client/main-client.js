@@ -1,8 +1,4 @@
 
-
-
-
-
 $(document).ready(function (){
     const userName = document.getElementById("dashUsername")
     const dashboard = document.getElementById("dashboard")
@@ -22,16 +18,12 @@ $(document).ready(function (){
 
 
     async function setName() {
-
-        console.log("set name")
         try {
-            console.log("tryyy")
 
             var id = localStorage.getItem("userID")
             var id = id.slice(1, -1)
 
-            var url = 'http://localhost:3000/user/whatever'+ '/' + id 
-            console.log(url)
+            var url = 'http://localhost:3000/user/user'+ '/' + id 
             let response = await fetch(url)
         
             //Handle if the request is successful.
@@ -51,7 +43,7 @@ $(document).ready(function (){
                 dashboardLastRelapse.innerHTML = `Your last relapse.. ${date.getMonth()} months and ${date.getDay()} days ago.`
             }
         }catch (e) {
-            console.log("something wrong with fetching at main")
+            console.log("Couldn't fetch the user")
         }
     }
 
@@ -59,9 +51,7 @@ $(document).ready(function (){
 
     relapseButton.addEventListener('click', async function(e) {
         e.preventDefault()
-        console.log("set name")
         try {
-            console.log("tryyy")
 
             var id = localStorage.getItem("userID")
             var id = id.slice(1, -1)
@@ -91,7 +81,7 @@ $(document).ready(function (){
                 dashboardLastRelapse.innerHTML = `Your last relapse.. ${date.getMonth()} months and ${date.getDay()} days ago.`
             }
         }catch (e) {
-            console.log("something wrong with fetching at main")
+            console.log("Couldn't fetch the user")
         };
     })
 })

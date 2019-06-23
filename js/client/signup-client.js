@@ -48,6 +48,4 @@ button.addEventListener('click', async function(e) {
         console.log(error);
     }
 
-    console.log("singup end")
-
 })

@@ -65,3 +65,43 @@ function userVisitLeave(message) {
     messageElement.innerText = message
     messageContainer.append(messageElement)
 }
+
+
+$(document).ready(function (){
+    const userName = document.getElementById("dashUsername")
+    const button = document.getElementById("logoutButton")
+
+    button.addEventListener('click', e => {
+        e.preventDefault()
+        localStorage.removeItem('authToken')
+        const token = localStorage.getItem('authToken')
+        if(!token) { document.location.href="/hci/pages/login.html" }
+    })
+
+
+    async function setName() {
+
+        console.log("set name")
+        try {
+            console.log("tryyy")
+
+            var id = localStorage.getItem("userID")
+            var id = id.slice(1, -1)
+
+            var url = 'http://localhost:3000/user/user'+ '/' + id 
+            let response = await fetch(url)
+        
+            //Handle if the request is successful.
+            if (response.ok) {
+                let jsonObj = await response.json()
+                var user = jsonObj.user
+                userName.innerText = user.name
+               }
+        }catch (e) {
+            console.log("Couldn't fetch the user")
+        }
+    }
+
+    setName()
+
+})

@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
-router.get('/whatever/:userID', (req, res, next) => {
+router.get('/user/:userID', (req, res, next) => {
     console.log("in the correct function")
     const userid = req.params.userID
     console.log(userid)

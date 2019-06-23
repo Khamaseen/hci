@@ -27,14 +27,11 @@ signInForm.addEventListener('submit', async function(e) {
         //Handle if the request is successful.
         if (response.ok) {
             let jsonObj = await response.json();
-            console.log(`response is: ${jsonObj}`)
 
             localStorage.setItem('authToken', JSON.stringify(jsonObj.token))
             localStorage.setItem('userID', JSON.stringify(jsonObj.userID))
 
-            console.log(`authToken: ${localStorage.getItem('token')}: message ${jsonObj.message}: id ${jsonObj.userID}`)
-            console.log(`${localStorage.getItem('userID')}`)
-            // document.location.href="/hci/pages/main.html"
+            document.location.href="/hci/pages/main.html"
         }
     } catch (error) {
         console.log(error);
