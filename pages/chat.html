@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/chat.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/bootstrap.min.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -65,44 +66,16 @@
     <!-- END OF NAVBAR. -->
     
     <!-- START OF CHAT -->
-    <div class="container-fluid">
-    
-        <div class="msg-group center">
-    
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-primary text-left">"doctor"</h6>
-                    <p class="card-text float-left">Hi ~</p>
-                </div>
-            </div>
-    
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-success text-right">"username"</h6>
-                    <p class="card-text float-right">Hello doc</p>
-                </div>
-            </div>
-    
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-success text-right">"username"</h6>
-                    <p class="card-text float-right">I got a problem...</p>
-                </div>
-            </div>
-    
-        </div>
-    
-        <div class="input-group mt-4">
-            <textarea id="input-box" class="form-control" rows="1" placeholder="Say something..."></textarea>
-            <span class="input-group-btn">
-                <button class="btn btn-primary" type="button"><i class="fas fa-paper-plane"></i> send</button>
-            </span>
-        </div>
-    
+    <div class="chat-box">
+      <div id="message-container"><strong id="chat-disconnected">The chat is currently disconnected due to a server error, our excuses.</strong></div>
+      <hr id="chat-seperator">
+      <form id="send-container">
+          <input type="text" id="message-input" placeholder="Type your message here">
+          <button class="btn btn-primary" type="submit" id="send-button">Send</button>
+      </form>
     </div>
-    <!-- START OF CHAT -->
+    <!-- END OF CHAT -->
 
-    
     <!-- START OF FOOTER. -->
     <div class="jumbotron bg-dark text-white" style="margin-bottom: 0px">
         <footer class="page-footer elegant-color-dark  center-on-small-only">
@@ -127,6 +100,8 @@
     <!-- END OF FOOTER. -->
 
 </body>
+<script src="http://localhost:3060/socket.io/socket.io.js"></script>
+<script src="../js/api/script.js"></script>
 </html>
 <!-- BOOTSRAP 4 JQ & JS-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
