@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
+<script src="../js/client/redirect-auth.js"></script>
 <body>
   <!-- START OF NAVBAR. -->
     <nav class="navbar  navbar-expand-md navbar-dark bg-transparent p-3">
@@ -51,10 +52,10 @@
     
           <!-- Drop down menu only if the user is loged in. -->
           <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
+            <a id="dashUsername" class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
             <div class="dropdown-menu" aria-labelledby="dropdown_target">
               <form class="px-4 py-3" action="/logout/endpoint" method="POST">
-                <button class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
+                <button id="logoutButton" class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
               </form>
             </div>
           </li>
@@ -114,6 +115,7 @@
 
 </body>
 </html>
+<script src="../js/client/aboutus-client.js"></script>
 <!-- BOOTSRAP 4 JQ & JS-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

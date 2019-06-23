@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/timeline.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
+<script src="../js/client/redirect-auth.js"></script>
 <body>
     <!-- START OF NAVBAR. -->
     <nav class="navbar  navbar-expand-md navbar-dark bg-transparent p-3">
@@ -57,10 +58,10 @@
     
           <!-- Drop down menu only if the user is loged in. -->
           <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
+            <a id="dashUsername" class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
             <div class="dropdown-menu" aria-labelledby="dropdown_target">
               <form class="px-4 py-3" action="/logout/endpoint" method="POST">
-                <button class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
+                <button id="logoutButton" class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
               </form>
             </div>
           </li>

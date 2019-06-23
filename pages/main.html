@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
+<script src="../js/client/redirect-auth.js"></script>
 <body>
   <!-- START OF NAVBAR. -->
     <nav class="navbar  navbar-expand-md navbar-dark bg-transparent p-3">
@@ -50,10 +51,10 @@
     
           <!-- Drop down menu only if the user is loged in. -->
           <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
+            <a id="dashUsername" class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
             <div class="dropdown-menu" aria-labelledby="dropdown_target">
               <form class="px-4 py-3" action="/logout/endpoint" method="POST">
-                <button class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
+                <button id="logoutButton" class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
               </form>
             </div>
           </li>
@@ -69,19 +70,21 @@
         <div class="col-sm-6">
           <div class="card-transparent border-0 shadow  m-5 text-white">
             <div class="card-body">
-              <h1 class="card-title">Dashboard <span class="fas fa-clipboard-list"></span></h1>
-              <p class="card-text">
+              <h1 id="dashboard" class="card-title">Dashboard <span class="fas fa-clipboard-list"></span></h1>
+              <p id="dashboardText" class="card-text">
                 All the neccessary user information will be shown in this card such as details
                 from the users profile, records kept from our app etc.
               </p>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-transparent">Days in</li>
-                <li class="list-group-item bg-transparent">Days since birth</li>
-                <li class="list-group-item bg-transparent">Days since last relapse</li>
+                <li id="dashboardDaysIn" class="list-group-item bg-transparent">Days in</li>
+                <li id="dashboardDaysSinceBirth" class="list-group-item bg-transparent">Days since birth</li>
+                <li id="dashboardLastRelapse" class="list-group-item bg-transparent">Days since last relapse</li>
               </ul>
             </div>
           </div>
         </div>
+        <button id="relapseButton" class="button button4">Yes, yes.. I admit <br> I've Relapsed</button>
+
       </div>
     </div>
     <div class="row">
@@ -141,3 +144,4 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/client/main-client.js"></script>

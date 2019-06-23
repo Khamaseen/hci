@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
+<script src="../js/client/redirect-main.js"></script>
 <body style="background: url('../resources/background.png') no-repeat center center fixed;">
     <div class="container mt-5">
         <div class="row justify-content-center align-self-center">
@@ -21,7 +22,7 @@
                 <hr class="my-4">
 
                 <!-- START OF FORM -->
-                <form>
+                <form id="signUpForm">
 
                     <div class="form-group">
                         <label for="exampleInputEmail1"><span class="fas fa-signature"></span> Full name</label>
@@ -49,6 +50,16 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="InputBabyName"><span class="fas fa-baby"></span> Full name of your baby</label>
+                        <input type="text" class="form-control" id="InputBabyName" placeholder="Your baby's Full Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="InputBabyDateOfBirth"><span class="fas fa-baby"></span> Your baby's birthday</label>
+                        <input type="date" class="form-control" id="InputBabyDateOfBirth" required>
+                    </div>
+
+                    <div class="form-group">
                         <label for="InputMaritialStatus" class="mr-5">Maritial status</label>
                         <select name="cars" id="InputMaritialStatus" class="ml-5" required>
                             <option value="volvo">Married</option>
@@ -58,7 +69,7 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" ><span class="fas fa-user-plus"></span> Sign Up</button>
+                    <button id="thisButton" type="submit" class="btn btn-primary" ><span class="fas fa-user-plus"></span> Sign Up</button>
                     <p class="mt-5 mb-0">Already registered with us?  <a class="navbar-brand" href="login.html">Log in!</a></p>
                     
                 </form>
@@ -72,6 +83,8 @@
     </div>
 
 </body>
+<script src="../js/client/signup-client.js"></script>
+
 </html>
 <!-- BOOTSRAP 4 JQ & JS-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
