@@ -13,6 +13,12 @@ body{
     -webkit-user-select: none;
     user-select: none;
 }
+
+.roadmapIntro{
+    text-align: center;
+    padding: 15px;
+}
+
 :focus{
     outline: 0px solid transparent !important;
 }
