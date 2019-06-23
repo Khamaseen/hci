@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Posts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/bootstrap.min.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="../css/timeline.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
+<script src="../js/client/redirect-auth.js"></script>
 <body>
     <!-- START OF NAVBAR. -->
     <nav class="navbar  navbar-expand-md navbar-dark bg-transparent p-3">
@@ -22,7 +28,7 @@
     
       <!-- Navbar items. -->
       <a class="navbar-brand" href="main.html">
-        <img src="../resources/brand-logo.png" width="35" height="35" class="d-inline-block align-top" alt="">
+        <img src="../resources/brand-logo.png" width="35" height="35" class="d-inline-block align-top" alt="Brand Logo">
         Pacifier
       </a>
       <div class="collapse navbar-collapse" id="collapse_target">
@@ -30,32 +36,32 @@
     
           <li class="nav-item">
             
-           <a class="nav-link" href="main.html"><i class="fas fa-home"></i> Home</a> 
+           <a class="nav-link" href="main.html"><span class="fas fa-home"></span> Home</a> 
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="chat.html"><i class="far fa-comment-dots"></i> Chat</a>
+            <a class="nav-link" href="chat.html"><span class="far fa-comment-dots"></span> Chat</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="timeline.html"><i class="far fa-hourglass"></i> Timeline</a>
+            <a class="nav-link" href="timeline.html"><span class="far fa-hourglass"></span> Timeline</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link active" href="posts.html"><i class="far fa-clipboard"></i> Posts</a>
+            <a class="nav-link active" href="posts.html"><span class="far fa-clipboard"></span> Posts</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="about-us.html"><i class="far fa-building"></i> About us</a>
+            <a class="nav-link" href="about-us.html"><span class="far fa-building"></span> About us</a>
           </li>
     
     
           <!-- Drop down menu only if the user is loged in. -->
           <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><i class="far fa-user-circle"></i> "username"</a>
+            <a id="dashUsername" class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
             <div class="dropdown-menu" aria-labelledby="dropdown_target">
               <form class="px-4 py-3" action="/logout/endpoint" method="POST">
-                <button class="btn btn-primary" type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                <button id="logoutButton" class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
               </form>
             </div>
           </li>
@@ -74,11 +80,11 @@
                 <hr class="my-4 bg-light">
                 <form id="timelineForm" >
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1" class="text-white display-4">Share a post <i class="fas fa-comment-alt"></i></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What's on your mind..."></textarea>
+                        <label for="exampleFormControlTextarea1" class="text-white display-4">Share a post <span class="fas fa-comment-alt"></span></label>
+                        <textarea class="form-control" id="textInput" rows="3" placeholder="What's on your mind..."></textarea>
                     </div>
                 </form>
-                <button class="btn btn-primary"><i class="fas fa-share"></i> Share</button>
+                <button class="btn btn-primary" id="postSubmit"><span class="fas fa-share"></span> Share</button>
                 <hr class="my-4 bg-light">
             </div>
         </div>
@@ -97,12 +103,12 @@
                         cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
                         dignissimos porro.</p>
                         <br>
-                        <p class="text-white justify-content-left"> <b>"somebody: "</b> Great! Keep it going!</p>
+                        <p class="text-white justify-content-left"> <strong>"somebody: "</strong> Great! Keep it going!</p>
 
-                        <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
+                        <button class="btn btn-primary">comment <span class="far fa-comments"></span></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
-                    <img src="img/img13.png" class="img-fluid" alt="img">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
                 </div>
                 <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
                     <time>2018-02-23</time>
@@ -116,12 +122,12 @@
                         cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
                         dignissimos porro.</p>
                         <br>
-                        <p class="text-white justify-content-left"> <b>"somebody: "</b> Great! Keep it going!</p>
+                        <p class="text-white justify-content-left"> <strong>"somebody: "</strong> Great! Keep it going!</p>
 
-                        <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
+                        <button class="btn btn-primary">comment <span class="far fa-comments"></span></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
-                    <img src="img/img13.png" class="img-fluid" alt="img">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
                 </div>
                 <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
                     <time>2018-02-23</time>
@@ -135,12 +141,12 @@
                         cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
                         dignissimos porro.</p>
                         <br>
-                        <p class="text-white justify-content-left"> <b>"somebody: "</b> Great! Keep it going!</p>
+                        <p class="text-white justify-content-left"> <strong>"somebody: "</strong> Great! Keep it going!</p>
 
-                        <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
+                        <button class="btn btn-primary">comment <span class="far fa-comments"></span></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
-                    <img src="img/img13.png" class="img-fluid" alt="img">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
                 </div>
                 <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
                     <time>2018-02-23</time>
@@ -154,12 +160,12 @@
                         cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
                         dignissimos porro.</p>
                         <br>
-                        <p class="text-white justify-content-left"> <b>"somebody: "</b> Great! Keep it going!</p>
+                        <p class="text-white justify-content-left"> <strong>"somebody: "</strong> Great! Keep it going!</p>
 
-                        <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
+                        <button class="btn btn-primary">comment <span class="far fa-comments"></span></button>
                 </div>
                 <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
-                    <img src="img/img13.png" class="img-fluid" alt="img">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
                 </div>
                 <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
                     <time>2018-02-23</time>
@@ -180,13 +186,13 @@
             </p>
             <ul class="list-unstyled">
                 <li>
-                    <i class="fas fa-envelope"></i> Email: example@vu.nl
+                    <span class="fas fa-envelope"></span> Email: example@vu.nl
                 </li>
                 <li>
-                    <i class="fas fa-map-marker-alt"></i> Address: VU Amsterdam
+                    <span class="fas fa-map-marker-alt"></span> Address: VU Amsterdam
                 </li>
                 <li>
-                    <i class="fas fa-hashtag"></i> Phone number: +123456789
+                    <span class="fas fa-hashtag"></span> Phone number: +123456789
                 </li>
             </ul>
         </footer>
@@ -196,6 +202,6 @@
 </body>
 </html>
 <!-- BOOTSRAP 4 JQ & JS-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/client/posts-client.js"></script>

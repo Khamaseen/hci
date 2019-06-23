@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
+<script src="../js/client/redirect-auth.js"></script>
 <body>
   <!-- START OF NAVBAR. -->
     <nav class="navbar  navbar-expand-md navbar-dark bg-transparent p-3">
@@ -20,7 +21,7 @@
     
       <!-- Navbar items. -->
       <a class="navbar-brand" href="main.html">
-        <img src="../resources/brand-logo.png" width="35" height="35" class="d-inline-block align-top" alt="">
+        <img src="../resources/brand-logo.png" width="35" height="35" class="d-inline-block align-top" alt="brand logo">
         Pacifier
       </a>
       <div class="collapse navbar-collapse" id="collapse_target">
@@ -28,32 +29,32 @@
     
           <li class="nav-item">
             
-           <a class="nav-link active" href="main.html"><i class="fas fa-home"></i> Home</a> 
+           <a class="nav-link active" href="main.html"><span class="fas fa-home"></span> Home</a> 
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="chat.html"><i class="far fa-comment-dots"></i> Chat</a>
+            <a class="nav-link" href="chat.html"><span class="far fa-comment-dots"></span> Chat</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="timeline.html"><i class="far fa-hourglass"></i> Timeline</a>
+            <a class="nav-link" href="timeline.html"><span class="far fa-hourglass"></span> Timeline</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="posts.html"><i class="far fa-clipboard"></i> Posts</a>
+            <a class="nav-link" href="posts.html"><span class="far fa-clipboard"></span> Posts</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="about-us.html"><i class="far fa-building"></i> About us</a>
+            <a class="nav-link" href="about-us.html"><span class="far fa-building"></span> About us</a>
           </li>
     
     
           <!-- Drop down menu only if the user is loged in. -->
           <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><i class="far fa-user-circle"></i> "username"</a>
+            <a id="dashUsername" class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
             <div class="dropdown-menu" aria-labelledby="dropdown_target">
               <form class="px-4 py-3" action="/logout/endpoint" method="POST">
-                <button class="btn btn-primary" type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                <button id="logoutButton" class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
               </form>
             </div>
           </li>
@@ -69,26 +70,28 @@
         <div class="col-sm-6">
           <div class="card-transparent border-0 shadow  m-5 text-white">
             <div class="card-body">
-              <h1 class="card-title">Dashboard <i class="fas fa-clipboard-list"></i></h1>
-              <p class="card-text">
+              <h1 id="dashboard" class="card-title">Dashboard <span class="fas fa-clipboard-list"></span></h1>
+              <p id="dashboardText" class="card-text">
                 All the neccessary user information will be shown in this card such as details
                 from the users profile, records kept from our app etc.
               </p>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-transparent">Days in</li>
-                <li class="list-group-item bg-transparent">Days since birth</li>
-                <li class="list-group-item bg-transparent">Days since last relapse</li>
+                <li id="dashboardDaysIn" class="list-group-item bg-transparent">Days in</li>
+                <li id="dashboardDaysSinceBirth" class="list-group-item bg-transparent">Days since birth</li>
+                <li id="dashboardLastRelapse" class="list-group-item bg-transparent">Days since last relapse</li>
               </ul>
             </div>
           </div>
         </div>
+        <button id="relapseButton" class="button button4">Yes, yes.. I admit <br> I've Relapsed</button>
+
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6">
         <div class="card m-5 bg-transparent text-white">
           <div class="card-body">
-            <h2 class="card-title"><i class="fas fa-quote-left"></i> Quote of the day! <i class="fas fa-quote-right"></i>
+            <h2 class="card-title"><span class="fas fa-quote-left"></span> Quote of the day! <span class="fas fa-quote-right"></span>
             </h2>
             <p class="card-text">
               A random motivational quote of the day. Can be pulled by a third party API online
@@ -100,7 +103,7 @@
       <div class="col-sm-6">
         <div class="card m-5 bg-transparent text-white">
           <div class="card-body">
-            <h2 class="card-title">The next appointment <i class="fas fa-calendar-alt"></i></h2>
+            <h2 class="card-title">The next appointment <span class="fas fa-calendar-alt"></span></h2>
             <p class="card-text">
               Information that would be filled by the doctor. The user can have a heads up and start preparing/taking
               actions
@@ -122,13 +125,13 @@
       </p>
       <ul class="list-unstyled">
         <li>
-          <i class="fas fa-envelope"></i> Email: example@vu.nl
+          <span class="fas fa-envelope"></span> Email: example@vu.nl
         </li>
         <li>
-          <i class="fas fa-map-marker-alt"></i> Address: VU Amsterdam
+          <span class="fas fa-map-marker-alt"></span> Address: VU Amsterdam
         </li>
         <li>
-          <i class="fas fa-hashtag"></i> Phone number: +123456789 
+          <span class="fas fa-hashtag"></span> Phone number: +123456789 
         </li>
       </ul>
     </footer>
@@ -141,3 +144,4 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/client/main-client.js"></script>

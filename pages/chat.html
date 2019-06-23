@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
+<script src="../js/client/redirect-auth.js"></script>
 <body>
     <!-- START OF NAVBAR. -->
     <nav class="navbar  navbar-expand-md navbar-dark bg-transparent p-3">
@@ -29,32 +30,32 @@
     
           <li class="nav-item">
             
-           <a class="nav-link" href="main.html"><i class="fas fa-home"></i> Home</a> 
+           <a class="nav-link" href="main.html"><span class="fas fa-home"></span> Home</a> 
           </li>
     
           <li class="nav-item">
-            <a class="nav-link active" href="chat.html"><i class="far fa-comment-dots"></i> Chat</a>
+            <a class="nav-link active" href="chat.html"><span class="far fa-comment-dots"></span> Chat</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="timeline.html"><i class="far fa-hourglass"></i> Timeline</a>
+            <a class="nav-link" href="timeline.html"><span class="far fa-hourglass"></span> Timeline</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="posts.html"><i class="far fa-clipboard"></i> Posts</a>
+            <a class="nav-link" href="posts.html"><span class="far fa-clipboard"></span> Posts</a>
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="about-us.html"><i class="far fa-building"></i> About us</a>
+            <a class="nav-link" href="about-us.html"><span class="far fa-building"></span> About us</a>
           </li>
     
     
           <!-- Drop down menu only if the user is loged in. -->
           <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><i class="far fa-user-circle"></i> "username"</a>
+            <a id="dashUsername" class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
             <div class="dropdown-menu" aria-labelledby="dropdown_target">
               <form class="px-4 py-3" action="/logout/endpoint" method="POST">
-                <button class="btn btn-primary" type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                <button id="logoutButton" class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
               </form>
             </div>
           </li>
@@ -66,6 +67,7 @@
     <!-- END OF NAVBAR. -->
     
     <!-- START OF CHAT -->
+
     <div class="chat-box">
       <div id="message-container"><strong id="chat-disconnected">The chat is currently disconnected due to a server error, our excuses.</strong></div>
       <hr id="chat-seperator">
@@ -86,13 +88,13 @@
             </p>
             <ul class="list-unstyled">
                 <li>
-                    <i class="fas fa-envelope"></i> Email: example@vu.nl
+                    <span class="fas fa-envelope"></span> Email: example@vu.nl
                 </li>
                 <li>
-                    <i class="fas fa-map-marker-alt"></i> Address: VU Amsterdam
+                    <span class="fas fa-map-marker-alt"></span> Address: VU Amsterdam
                 </li>
                 <li>
-                    <i class="fas fa-hashtag"></i> Phone number: +123456789
+                    <span class="fas fa-hashtag"></span> Phone number: +123456789
                 </li>
             </ul>
         </footer>

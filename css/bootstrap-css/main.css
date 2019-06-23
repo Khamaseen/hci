@@ -16,3 +16,12 @@ body {
   textarea {
     resize: none;
   }
+
+  #relapseButton {
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 15%;
+    height: wrap;
+  }
+  .button4:hover {background-color: #a39d9d;}
