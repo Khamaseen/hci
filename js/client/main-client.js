@@ -7,7 +7,7 @@ $(document).ready(function (){
     const dashboardDaysSinceBirth = document.getElementById("dashboardDaysSinceBirth")
     const dashboardLastRelapse = document.getElementById("dashboardLastRelapse")
     const button = document.getElementById("logoutButton")
-    const relapseButton = document.getElementById("relapseButton")
+    // const relapseButton = document.getElementById("relapseButton")
 
     button.addEventListener('click', e => {
         e.preventDefault()
@@ -49,39 +49,39 @@ $(document).ready(function (){
 
     setName()
 
-    relapseButton.addEventListener('click', async function(e) {
-        e.preventDefault()
-        try {
+    // relapseButton.addEventListener('click', async function(e) {
+    //     e.preventDefault()
+    //     try {
 
-            var id = localStorage.getItem("userID")
-            var id = id.slice(1, -1)
+    //         var id = localStorage.getItem("userID")
+    //         var id = id.slice(1, -1)
 
-            var url = 'http://localhost:3000/user/' + id 
+    //         var url = 'http://localhost:3000/user/' + id 
 
-            var dd = new Date().getDate()
+    //         var dd = new Date().getDate()
             
-            console.log(dd)
+    //         console.log(dd)
         
-            let response = await fetch(url, {
-                method: 'PUT',
-                body: JSON.stringify({
-                    lastRelapse: new Date().getDate()
-                }),
-                headers: {
-                    "Content-type": "application/json",
-                }
-            });
+    //         let response = await fetch(url, {
+    //             method: 'PUT',
+    //             body: JSON.stringify({
+    //                 lastRelapse: new Date().getDate()
+    //             }),
+    //             headers: {
+    //                 "Content-type": "application/json",
+    //             }
+    //         });
         
-            //Handle if the request is successful.
-            if (response.ok) {
-                let jsonObj = await response.json()
-                var user = jsonObj.user
-                var dateObj = user.lastRelapse
-                var date = new Date(dateObj)
-                dashboardLastRelapse.innerHTML = `Your last relapse.. ${date.getMonth()} months and ${date.getDay()} days ago.`
-            }
-        }catch (e) {
-            console.log("Couldn't fetch the user")
-        };
-    })
+    //         //Handle if the request is successful.
+    //         if (response.ok) {
+    //             let jsonObj = await response.json()
+    //             var user = jsonObj.user
+    //             var dateObj = user.lastRelapse
+    //             var date = new Date(dateObj)
+    //             dashboardLastRelapse.innerHTML = `Your last relapse.. ${date.getMonth()} months and ${date.getDay()} days ago.`
+    //         }
+    //     }catch (e) {
+    //         console.log("Couldn't fetch the user")
+    //     };
+    // })
 })
