@@ -2,64 +2,14 @@
 progressive web application to help new/young mothers stay off the cigaret.
 This app uses html, css, js.
 
-Major components are notifications, timeline, chat(s), facebook-like page.
+In order to run this web app
 
-###LINK TO HTML CSS JS TUTORIAL 
--> https://www.youtube.com/watch?v=7cwRaTqR4k0&list=PLoYCgNOIyGAB_8_iq1cL8MVeun7cB6eNc&index=8 
+Have the following requirements:
+Nodejs installed.
 
-###LINK TO PWA 
--> https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/
+Run the web app:
+Go the specific folder, hci, with the terminal or command line.
+Type 'npm i' (this will install all the dependency packages)
+Type 'npm run start' (this will install the server)
 
-###LINKS TO NODE
--> https://expressjs.com/
--> https://www.npmjs.com/package/flat-cache
--> https://www.npmjs.com/package/nodemon
-
-####CHAT
--> https://socket.io/get-started/chat
-
-###Snippet Node JS: 
-
-
-const express = require("express");
-const app = express();
-
-const DATABASE = [];
-
-app.post("/api/comments/add", (request, response) => {
-
-  const text = request.query.text;
-  
-  if (text) {
-  
-    const comment = {
-    
-      id: Math.ceil(Math.random() * 1e10),
-      
-      text: text,
-      
-      date: Date.now() / 1000,
-      
-    };
-    
-    DATABASE.push(comment);
-    
-    response.json(comment);
-    
-  } else {
-  
-    response.status(500).send("Text missing");
-    
-  }
-  
-});
-
-app.get("/api/comments", (request, response) => {
-
-  response.json(DATABASE);
-  
-});
-
-app.listen(1337);
-
-
+On Visual Studio Code, you can use the plugin 'Live Server' to launch any of the html web pages.
