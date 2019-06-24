@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sign Up</title>
+    <title>Sign In</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/bootstrap.min.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
-<body>
+<script src="../js/client/redirect-main.js"></script>
+<body style="background: url('../resources/background.png') no-repeat center center fixed;">
 
     <div class="container mt-5">
         <div class="row justify-content-center align-self-center">
@@ -22,25 +23,20 @@
                 <hr class="my-4">
 
                 <!-- START OF FORM -->
-                <form class="animated zoomInRight">
+                <form class="animated zoomInRight" id="signIn-form">
 
                     <div class="form-group">
-                      <label for="InputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <label for="InputEmail1"><span class="fas fa-envelope"></span> Email address</label>
+                      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
                       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
 
                     <div class="form-group">
-                      <label for="InputPassword1">Password</label>
-                      <input type="password" class="form-control" id="Password1" placeholder="Password">
+                      <label for="Password1"><span class="fas fa-key"></span> Password</label>
+                      <input type="password" class="form-control" id="Password1" placeholder="Password" required>
                     </div>
 
-                    <div class="form-check mt-3 mb-3">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Log in</button>
+                    <button type="submit" class="btn btn-primary"><span class="fas fa-sign-in-alt"></span> Log in</button>
                     <p class="mt-5 mb-0">Do not have an account with us?  <a class="navbar-brand" href="signup.html">Sign up!</a></p>
 
                 </form>
@@ -59,3 +55,4 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/client/login-client.js"></script>

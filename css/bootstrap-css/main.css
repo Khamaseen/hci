@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 body {
-    background: url('../../background.jpg') no-repeat center center fixed;
+    background: url('../../resources/background.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -8,4 +9,19 @@ body {
     font-family: 'Roboto', sans-serif;
   }
 
-  
+  footer {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  #relapseButton {
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 15%;
+    height: wrap;
+  }
+  .button4:hover {background-color: #a39d9d;}

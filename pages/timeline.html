@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>roadmap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/bootstrap.min.css" /> <!-- BootStrapp CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/timeline.css" /> <!-- BootStrapp CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<script src="../js/client/redirect-auth.js"></script>
+<body>
+    <!-- START OF NAVBAR. -->
+    <nav class="navbar  navbar-expand-md navbar-dark bg-transparent p-3">
+    
+      <!-- Button for mobile views on the navbar. -->
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <!-- Navbar items. -->
+      <a class="navbar-brand" href="main.html">
+        <img src="../resources/brand-logo.png" width="35" height="35" class="d-inline-block align-top" alt="brand logo">
+        Pacifier
+      </a>
+      <div class="collapse navbar-collapse" id="collapse_target">
+        <ul class="navbar-nav nav-pills ml-auto p-2">
+    
+          <li class="nav-item">
+            
+           <a class="nav-link" href="main.html"><span class="fas fa-home"></span> Dashboard</a> 
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link" href="chat.html"><span class="far fa-comment-dots"></span> Speak to a therapist</a>
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link active" href="timeline.html"><span class="far fa-hourglass"></span> Roadmap</a>
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link" href="posts.html"><span class="far fa-clipboard"></span> Community</a>
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link" href="about-us.html"><span class="far fa-building"></span> About us</a>
+          </li>
+    
+    
+          <!-- Drop down menu only if the user is loged in. -->
+          <li class="nav-item dropdown ">
+            <a id="dashUsername" class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target"><span class="far fa-user-circle"></span> "username"</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown_target">
+              <form class="px-4 py-3" action="/logout/endpoint" method="POST">
+                <button id="logoutButton" class="btn btn-primary" type="submit"><span class="fas fa-sign-out-alt"></span> Logout</button>
+              </form>
+            </div>
+          </li>
+          <!-- Show Login and Signup if user not loged in. -->
+    
+        </ul>
+      </div>
+    </nav>
+    <!-- END OF NAVBAR. -->
+
+    <!-- START OF ADD STORY -->
+    <div class="modal fade" id="addStoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Share a story</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+
+
+
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Story Title <span class="fas fa-feather-alt"></span></label>
+                            <input type="name" class="form-control" id="titleInput">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Enter the story <span class="fas fa-comment-alt"></span></label>
+                            <textarea class="form-control" id="textInput" rows="3"></textarea>
+                        </div>
+                    </form>
+
+
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-primary" id="timelineSubmit"><span class="fas fa-share"></span> Share</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="roadmapIntro">
+        <p>Add stories to your personal roadmap</p>
+    </div>
+    <div class="text-center">
+        <a href="" class="btn btn-primary btn-rounded btn-lg mb-4" data-toggle="modal" data-target="#addStoryModal">
+                <span class="fas fa-plus "> Add story</span></a>
+    </div>
+    <!-- END OF ADD STORY -->
+
+    <!-- START OF TIMELINE -->
+    <div class="container">
+        <div class="timeline">
+
+            <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+                <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                    <h3 class=" text-light">Timeline Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui
+                        cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
+                        dignissimos porro.</p>
+                </div>
+                <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="profile picture">
+                </div>
+                <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+                    <time>2018-02-23</time>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+                <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                    <h3 class=" text-light">Timeline Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui
+                        cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
+                        dignissimos porro.</p>
+                </div>
+                <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="profile picture">
+                </div>
+                <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+                    <time>2018-02-23</time>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+                <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                    <h3 class=" text-light">Timeline Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui
+                        cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
+                        dignissimos porro.</p>
+                </div>
+                <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="profile picture">
+                </div>
+                <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+                    <time>2018-02-23</time>
+                </div>
+            </div>
+
+            <div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
+                <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                    <h3 class=" text-light">Timeline Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eaque amet deleniti hic quas qui
+                        cumque delectus aliquid, eius quia quod, quae, aliquam aspernatur facilis. Minima quod corporis
+                        dignissimos porro.</p>
+                </div>
+                <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
+                    <img src="../resources/myAvatar.png" class="img-fluid" alt="profile picture">
+                </div>
+                <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
+                    <time>2018-02-23</time>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- END OF TIMELINE -->
+    
+    <!-- START OF FOOTER. -->
+    <div class="jumbotron bg-dark text-white" style="margin-bottom: 0px">
+        <footer class="page-footer elegant-color-dark  center-on-small-only">
+            <h3 class="display-4">Pacifier</h3>
+            <hr class="my-4 bg-light">
+            <p class="lead">
+                Our contact details are down below:
+            </p>
+            <ul class="list-unstyled">
+                <li>
+                    <span class="fas fa-envelope"></span> Email: example@vu.nl
+                </li>
+                <li>
+                    <span class="fas fa-map-marker-alt"></span> Address: VU Amsterdam
+                </li>
+                <li>
+                    <span class="fas fa-hashtag"></span> Phone number: +123456789
+                </li>
+            </ul>
+        </footer>
+    </div>
+    <!-- END OF FOOTER. -->
+
+</body>
+</html>
+<!-- BOOTSRAP 4 JQ & JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="../js/client/timeline-client.js"></script>
