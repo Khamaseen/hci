@@ -61,14 +61,15 @@ router.post('/:postID', (req, res, next) => {
 
     // Find given post to add the comment to.
     const post = Post.findById(post_id).exec()
-                    
-    new_comment.post = post;
+           
+    //Not needed, makes it only more difficult. If you place a comment at the end of a post, it should just be fine for this implementation.
+    // new_comment.post = post;
 
     new_comment
         .save()
         .then(result => {
             res.status(201).json({
-                createdComment: new_comment;
+                createdComment: new_comment
             })
         })
         .catch(err => {
@@ -79,18 +80,21 @@ router.post('/:postID', (req, res, next) => {
 
     post.comments.push(new_comment);
 
-    post
-        .save()
-        .then(result => {
-            res.status(201).json({
-                new_post: post;
-            })
-        })
-        .catch(err => {
-            res.status(501).json({
-                error: err
-            })
-        });
+
+    //Not needed? If i'm mistaken with put operations you don't resave the post aswel. That happens automatically with Mongoose? Not sure, so should be tested.
+    
+    // post
+    //     .save()
+    //     .then(result => {
+    //         res.status(201).json({
+    //             new_post: post
+    //         })
+    //     })
+    //     .catch(err => {
+    //         res.status(501).json({
+    //             error: err
+    //         })
+    //     });
 })
 
 router.delete('/', (req, res, next) => {

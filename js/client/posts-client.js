@@ -31,6 +31,10 @@ async function setName() {
 setName();
 
 $(document).ready(function (){
+
+    //buttons clicked for comments: https://stackoverflow.com/questions/23835150/javascript-event-listener-for-multiple-buttons-with-same-class-name
+    //Since, here the buttons are found by className, what we can do is set for each button an ID tag aswell. This ID tag than is the ID of the post.
+    //Getting the button who clicked, then getting the ID of this button results in getting the ID of the post.
     
     const url = 'http://localhost:3000/post';
     
