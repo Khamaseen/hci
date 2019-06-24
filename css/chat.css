@@ -13,6 +13,11 @@ div.chat-box {
     margin-bottom: 25px; 
 }
 
+.chatIntro {
+    text-align: center;
+    color: white;
+}
+
 #message-container {
     height: 480px;
     width: 100%;

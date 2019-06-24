@@ -30,11 +30,11 @@
     
           <li class="nav-item">
             
-           <a class="nav-link" href="main.html"><span class="fas fa-home"></span> Home</a> 
+           <a class="nav-link" href="main.html"><span class="fas fa-home"></span> Dashboard</a> 
           </li>
     
           <li class="nav-item">
-            <a class="nav-link active" href="chat.html"><span class="far fa-comment-dots"></span> Chat</a>
+            <a class="nav-link active" href="chat.html"><span class="far fa-comment-dots"></span> Speak to a therapist</a>
           </li>
     
           <li class="nav-item">
@@ -42,7 +42,7 @@
           </li>
     
           <li class="nav-item">
-            <a class="nav-link" href="posts.html"><span class="far fa-clipboard"></span> Posts</a>
+            <a class="nav-link" href="posts.html"><span class="far fa-clipboard"></span> Community</a>
           </li>
     
           <li class="nav-item">
@@ -66,15 +66,24 @@
     </nav>
     <!-- END OF NAVBAR. -->
     
-    <!-- START OF CHAT -->
+    <div class="chatIntro">
+        <p>Chat with a therapist. <br> Feel free to talk about anything. That is what we are here for.</p>
+    </div>
 
-    <div class="chat-box">
-      <div id="message-container"><strong id="chat-disconnected">The chat is currently disconnected due to a server error, our excuses.</strong></div>
-      <hr id="chat-seperator">
-      <form id="send-container">
-          <input type="text" id="message-input" placeholder="Type your message here">
-          <button class="btn btn-primary" type="submit" id="send-button">Send</button>
-      </form>
+    <!-- START OF CHAT -->
+    <div class="row justify-content-center ">
+      <div class="col-sm-4">
+        <div class="container bg-light my-3 py-3 ">
+          <div id="message-container"><strong id="chat-disconnected">The chat is currently disconnected due to a server error, our excuses.</strong></div>
+          <hr id="chat-seperator">
+          <form id="send-container">
+            <div class="form-group">
+              <input type="text" id="message-input" placeholder="Type your message here">
+              <button class="btn btn-primary" type="submit" id="send-button"><i class="far fa-paper-plane"></i> Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
     <!-- END OF CHAT -->
 

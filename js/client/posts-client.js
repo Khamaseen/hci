@@ -1,36 +1,37 @@
-const button = document.getElementById("logoutButton")
-const userName = document.getElementById("dashUsername")
-
-button.addEventListener('click', e => {
-    e.preventDefault()
-    localStorage.removeItem('authToken')
-    const token = localStorage.getItem('authToken')
-    if(!token) { document.location.href="/hci/pages/login.html" }
-})
-
-async function setName() {
-    try {
-        var id = localStorage.getItem("userID")
-        var id = id.slice(1, -1)
-
-        var url = 'http://localhost:3000/user/whatever'+ '/' + id 
-    
-        let response = await fetch(url)
-    
-        //Handle if the request is successful.
-        if (response.ok) {
-            let jsonObj = await response.json()
-            console.log(`response ok ${jsonObj.user}`)
-            userName.innerText = jsonObj.user.name
-        }
-    }catch (e) {
-        console.log("Couldn't fetch the user")
-    }
-}
-
-setName();
 
 $(document).ready(function (){
+
+    const button = document.getElementById("logoutButton")
+    const userName = document.getElementById("dashUsername")
+
+    button.addEventListener('click', e => {
+        e.preventDefault()
+        localStorage.removeItem('authToken')
+        const token = localStorage.getItem('authToken')
+        if(!token) { document.location.href="/hci/pages/login.html" }
+    })
+
+    async function setName() {
+        try {
+            var id = localStorage.getItem("userID")
+            var id = id.slice(1, -1)
+
+            var url = 'http://localhost:3000/user/user/' + id 
+        
+            let response = await fetch(url)
+        
+            //Handle if the request is successful.
+            if (response.ok) {
+                let jsonObj = await response.json()
+                console.log(`response ok ${jsonObj.user}`)
+                userName.innerText = jsonObj.user.name
+            }
+        }catch (e) {
+            console.log("Couldn't fetch the user")
+        }
+    }
+
+    setName();
 
     //buttons clicked for comments: https://stackoverflow.com/questions/23835150/javascript-event-listener-for-multiple-buttons-with-same-class-name
     //Since, here the buttons are found by className, what we can do is set for each button an ID tag aswell. This ID tag than is the ID of the post.

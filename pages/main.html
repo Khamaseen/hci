@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>Overview</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/bootstrap.min.css" /> <!-- BootStrapp CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-css/main.css" /> <!-- BootStrapp CSS -->
@@ -67,10 +67,10 @@
 
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-sm-6">
-          <div class="card-transparent border-0 shadow  m-5 text-white">
+        <div class="col">
+          <div class="card bg-transparent m-3 text-white">
             <div class="card-body">
-              <h1 id="dashboard" class="card-title">Dashboard <span class="fas fa-clipboard-list"></span></h1>
+              <h1 id="dashboard" class="card-titlep"><span class="fas fa-clipboard-list"></span> Dashboard</h1>
               <p id="dashboardText" class="card-text">
                 All the neccessary user information will be shown in this card such as details
                 from the users profile, records kept from our app etc.
@@ -83,40 +83,38 @@
             </div>
           </div>
         </div>
+        <div class="col">
+          <div class="card m-3 bg-transparent text-white">
+            <div class="card-body">
+              <h2 class="card-title"><span class="fas fa-quote-left"></span> Quote of the day! <span class="fas fa-quote-right"></span>
+              </h2>
+              <p id="quoteBox" class="card-text">
+                A random motivational quote of the day. Can be pulled by a third party API online
+                so that way we do not have to manualy add it on source code.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card m-3 bg-transparent text-white">
+            <div class="card-body">
+              <h2 class="card-title">The next appointment <span class="fas fa-calendar-alt"></span></h2>
+              <p class="card-text">
+                Information that would be filled by the doctor. The user can have a heads up and start preparing/taking
+                actions
+                for the
+                next appointment.
+              </p>
+            </div>
+          </div>
+        </div>
         <!-- <button id="relapseButton" class="button button4">Yes, yes.. I admit <br> I've Relapsed</button> -->
 
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card m-5 bg-transparent text-white">
-          <div class="card-body">
-            <h2 class="card-title"><span class="fas fa-quote-left"></span> Quote of the day! <span class="fas fa-quote-right"></span>
-            </h2>
-            <p class="card-text">
-              A random motivational quote of the day. Can be pulled by a third party API online
-              so that way we do not have to manualy add it on source code.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card m-5 bg-transparent text-white">
-          <div class="card-body">
-            <h2 class="card-title">The next appointment <span class="fas fa-calendar-alt"></span></h2>
-            <p class="card-text">
-              Information that would be filled by the doctor. The user can have a heads up and start preparing/taking
-              actions
-              for the
-              next appointment.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
             
   <!-- START OF FOOTER. -->
-  <div class="jumbotron bg-dark text-white" style="margin-bottom: 0px">
+  <div class="jumbotron bg-dark text-white" style="margin-bottom: 0px; margin-top: 130px">
     <footer class="page-footer elegant-color-dark  center-on-small-only">
       <h3 class="display-4">Pacifier</h3>
       <hr class="my-4 bg-light">
