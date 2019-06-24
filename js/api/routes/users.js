@@ -1,7 +1,6 @@
 // const auth = require('../middleware/auth'); //should be our own auth
 const _Lodash = require('lodash');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
 const {User, validate} = require('../models/user');
 const mongoose = require('mongoose');
 const express = require('express');
