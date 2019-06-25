@@ -51,7 +51,7 @@ $(document).ready(function (){
             var postTemplate = 
                 `<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
                     <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
-                        <h3 id="post-id" style="display: none;">${document._id} the post id.</h3>
+                        <h3 id="post-id" style="display: none;">${document._id}</h3>
                         <h3 class=" text-light">${document.username}</h3>
                         <p>${document.paragraph}.</p>
                         <br>
@@ -129,10 +129,10 @@ $("#postSubmit").click(async function () {
 
 });
 
-$("#commentSubmit").click(async function () { 
+$("#commentSubmit").click(async function (event) { 
     const post_id = $('#post-id').text(); 
     const url = 'http://localhost:3000/post/' + post_id;
-
+ 
     try {
         let response = await fetch(url, {
             method: 'POST',
@@ -147,14 +147,18 @@ $("#commentSubmit").click(async function () {
 
         //Hanndle if the request is successful.
         if (response.ok) {
+            console.log("OKAY!!")
             let jsonResponse = await response.json();
             const comm_username = jsonResponse.createdTimeline.username;
             const comm_paragraph = jsonResponse.createdTimeline.paragraph;
+            console.log(`json response: ${comm_username}, ${comm_paragraph}`)
+
 
             
             
             var comment_template = `<p class="text-white justify-content-left"> <b>${comm_username}: </b>${comm_paragraph}</p>`;
-            $("div.comment-section").append(comment);
+            $(event.target).hide()
+            $("div.comment-section").append(comment_template);
         }
     } catch (error) {
         console.log(error);

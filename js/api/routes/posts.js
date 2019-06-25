@@ -53,21 +53,33 @@ router.post('/', (req, res, next) => {
 router.post('/:postID', async (req, res, next) => {
     const post_id = req.params.postID;
 
+    console.log("commentttssss") 
     // Create the comment
     const new_comment = new Comment({
         _id: new mongoose.Types.ObjectId(),
         username: req.body.username,
         paragraph: req.body.paragraph,
     });
+    console.log(`new comment is ${new_comment}`) 
+
 
     // Find given post to add the comment to.
+    console.log("commentttssss created comment") 
+    console.log(`new id is ${post_id}`) 
+
+
     const post = await Post.findById(post_id);
+    console.log(`found post ${post}`) 
+
     post.comments.push(new_comment);
+    console.log(`post has new comment ${post.comments}`) 
+
     
     post
         .save()
         .then(result => {
             res.status(201).json({
+                createdTimeline: post,
                 new_post: post
             })
         })
