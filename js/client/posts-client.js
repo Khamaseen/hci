@@ -41,15 +41,24 @@ $(document).ready(function (){
     
     $.get(url, function(result){
         result.docs.forEach(document => {
+
+            var display_comments = document.comments.map(comment => {
+                var template_comment = `<p class="text-white justify-content-left"> <b>${comment.username}: </b>${comment.paragraph}</p>`;
+                return template_comment;
+            });
+
+            console.log("The comment array from the post are: ", display_comments);
             var postTemplate = 
                 `<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
                     <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
+                        <h3 id="post-id" style="display: none;">${document._id} the post id.</h3>
                         <h3 class=" text-light">${document.username}</h3>
                         <p>${document.paragraph}.</p>
                         <br>
-                        <p class="text-white justify-content-left"> <b>"somebody: "</b> Great! Keep it going!</p>
+                        <div class="comment-section">
+                        </div>
 
-                        <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
+                        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#addCommentModal">comment <span class="far fa-comments"></span></a>
                     </div>
                     <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
                         <img src="../resources/myAvatar.png" class="img-fluid" alt="img">
@@ -60,6 +69,9 @@ $(document).ready(function (){
                 </div>`
             
             $("div.timeline").prepend(postTemplate);
+            display_comments.forEach(comment => {
+                $("div.comment-section").append(comment);
+            })
         });
     });
 });
@@ -72,7 +84,7 @@ $("#postSubmit").click(async function () {
         let response = await fetch(url, {
             method: 'POST',
             body: JSON.stringify({
-                username: "Test User - This should be correct username",
+                username: $('#dashUsername').text(),
                 paragraph: $('#textInput').val(),
                 date: new Date().toDateString()
             }),
@@ -88,13 +100,16 @@ $("#postSubmit").click(async function () {
             const paragraphTest = jsonResponse.createdTimeline.paragraph;
             const date = jsonResponse.createdTimeline.date;
 
+            
+            
             var postTemplate = 
         `<div class="row no-gutters justify-content-end justify-content-md-around align-items-start  timeline-nodes">
             <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
                 <h3 class=" text-light">${headerTest}</h3>
                 <p>${paragraphTest}.</p>
                 <br>
-                <p class="text-white justify-content-left"> <b>"somebody: "</b> Great! Keep it going!</p>
+                <div class="comment-section">
+                </div>
 
                 <button class="btn btn-primary">comment <i class="far fa-comments"></i></button>
             </div>
@@ -107,6 +122,39 @@ $("#postSubmit").click(async function () {
         </div>`
 
             $("div.timeline").prepend(postTemplate);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
+});
+
+$("#commentSubmit").click(async function () { 
+    const post_id = $('#post-id').text(); 
+    const url = 'http://localhost:3000/post/' + post_id;
+
+    try {
+        let response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
+                username: $('#dashUsername').text(),
+                paragraph: $('#commentInput').val()
+            }),
+            headers: {
+                "Content-type": "application/json",
+            }
+        });
+
+        //Hanndle if the request is successful.
+        if (response.ok) {
+            let jsonResponse = await response.json();
+            const comm_username = jsonResponse.createdTimeline.username;
+            const comm_paragraph = jsonResponse.createdTimeline.paragraph;
+
+            
+            
+            var comment_template = `<p class="text-white justify-content-left"> <b>${comm_username}: </b>${comm_paragraph}</p>`;
+            $("div.comment-section").append(comment);
         }
     } catch (error) {
         console.log(error);

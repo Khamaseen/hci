@@ -12,7 +12,8 @@ const userRoutes = require('./routes/users');
 mongoose.connect(
   "mongodb+srv://hci-project:hci-project@hci-psmmo.mongodb.net/test?retryWrites=true&w=majority",
   {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex: true
   }
 );
 

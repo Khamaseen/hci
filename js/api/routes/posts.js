@@ -7,6 +7,7 @@ const Comment = require('../models/comment');
 
 router.get('/', (req, res, next) => {
     Post.find()
+        .populate('comments', 'username paragraph')
         .exec()
         .then(docs => {
             let count = docs.length;
@@ -49,7 +50,7 @@ router.post('/', (req, res, next) => {
 
 
 // Posting a comment to the server
-router.post('/:postID', (req, res, next) => {
+router.post('/:postID', async (req, res, next) => {
     const post_id = req.params.postID;
 
     // Create the comment
@@ -60,16 +61,14 @@ router.post('/:postID', (req, res, next) => {
     });
 
     // Find given post to add the comment to.
-    const post = Post.findById(post_id).exec()
-           
-    //Not needed, makes it only more difficult. If you place a comment at the end of a post, it should just be fine for this implementation.
-    // new_comment.post = post;
-
-    new_comment
+    const post = await Post.findById(post_id);
+    post.comments.push(new_comment);
+    
+    post
         .save()
         .then(result => {
             res.status(201).json({
-                createdComment: new_comment
+                new_post: post
             })
         })
         .catch(err => {
@@ -77,24 +76,6 @@ router.post('/:postID', (req, res, next) => {
                 error: err
             })
         });
-
-    post.comments.push(new_comment);
-
-
-    //Not needed? If i'm mistaken with put operations you don't resave the post aswel. That happens automatically with Mongoose? Not sure, so should be tested.
-    
-    // post
-    //     .save()
-    //     .then(result => {
-    //         res.status(201).json({
-    //             new_post: post
-    //         })
-    //     })
-    //     .catch(err => {
-    //         res.status(501).json({
-    //             error: err
-    //         })
-    //     });
 })
 
 router.delete('/', (req, res, next) => {
